@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+  spring:
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/office?characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+
+    hikari:
+      pool-nameL: DateHikariCP
+
+      auto-commit: true
+ 
+      maximum-pool-size: 10
+    
+      minimum-idle: 5
+    
+      idle-timeout: 180000
+   
+      max-lifetime: 1800000
+    
+      connection-timeout: 30000
+    
+      connection-test-query: SELECT 1
+
+    mybatis-plus:
+      mapper-locations: classpath*:/mapper/*Mapper.xml
+      type-aliases-package: com.jmu.server.pojo
+      configuration:
+          map-underscore-to-camel-case: false
+
+    logging:
+      level:
+        com.jmu.server.mapper: debug

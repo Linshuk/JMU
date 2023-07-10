@@ -18,10 +18,11 @@
 
 	<modules>
 		<module>office-server</module>
+		<module>office-generator</module>
 	</modules>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>18</java.version>
 	</properties>
 
 </project>

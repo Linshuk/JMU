@@ -18,10 +18,19 @@
 
 	<modules>
 		<module>office-server</module>
+		<module>office-generator</module>
 	</modules>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>18</java.version>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-generator</artifactId>
+			<version>3.3.1.tmp</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
 
 </project>

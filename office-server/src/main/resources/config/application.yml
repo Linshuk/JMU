@@ -1,5 +1,5 @@
-server:
-  port: 8080
+  server:
+    port: 8080
 
   spring:
     datasource:
@@ -8,29 +8,35 @@ server:
       username: root
       password: 123456
 
-    hikari:
-      pool-nameL: DateHikariCP
+      hikari:
+        pool-name: DateHikariCP
 
-      auto-commit: true
+        auto-commit: true
  
-      maximum-pool-size: 10
+        maximum-pool-size: 10
     
-      minimum-idle: 5
+        minimum-idle: 5
     
-      idle-timeout: 180000
+        idle-timeout: 180000
    
-      max-lifetime: 1800000
+        max-lifetime: 1800000
     
-      connection-timeout: 30000
+        connection-timeout: 30000
     
-      connection-test-query: SELECT 1
+        connection-test-query: SELECT 1
 
-    mybatis-plus:
-      mapper-locations: classpath*:/mapper/*Mapper.xml
-      type-aliases-package: com.jmu.server.pojo
-      configuration:
-          map-underscore-to-camel-case: false
+  mybatis-plus:
+    mapper-locations: classpath*:/mapper/*Mapper.xml
+    type-aliases-package: com.jmu.server.pojo
+    configuration:
+        map-underscore-to-camel-case: false
 
-    logging:
-      level:
-        com.jmu.server.mapper: debug
+  logging:
+    level:
+      com.jmu.server.mapper: debug
+
+  jwt:
+    tokenHeader: Authorization
+    secret: office-secret
+    expiration: 604800
+    tokenHead: Bearer
